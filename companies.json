@@ -1,0 +1,14 @@
+[
+    {
+        "name": "Yoot",
+        "numberOfEmployees": 50,
+        "ceo": "Anh Tài Phùng",
+        "rating": 4.3
+    },
+    {
+        "name": "Axon Active",
+        "numberOfEmployees": 3,
+        "ceo": null,
+        "rating": 9.9
+    }
+]

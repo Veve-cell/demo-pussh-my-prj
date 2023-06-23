@@ -1,0 +1,36 @@
+{
+  "posts": [
+    {
+      "id": 1,
+      "title": "json-server",
+      "author": "typicode"
+    }
+  ],
+  "comments": [
+    {
+      "id": 1,
+      "body": "some comment",
+      "postId": 1
+    }
+  ],
+  "profile": {
+    "name": "typicode"
+  },
+  "course": [
+    {
+      "id": 1,
+      "name": "MIS course",
+      "description": "Ngành hệ thống thông tin quản lý, sự kết hợp kiến thức của kinh tế và công nghệ. Học cũng hay lắm ó"
+    },
+    {
+      "id": 2,
+      "name": "Học làm BA",
+      "description": "Bạn muốn trở thành 1 người BA chân chính, hãy đến với lớp học làm BA của chúng tuii"
+    },
+    {
+      "name": "a",
+      "description": "a",
+      "id": 3
+    }
+  ]
+}

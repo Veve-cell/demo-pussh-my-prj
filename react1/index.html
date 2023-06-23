@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+ <!-- Load React. -->
+  <!-- Note: when deploying, replace "development.js" with "production.min.js". -->
+  <script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>
+  <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+ 
+  <!-- Load our React component. -->
+  <!-- <script src="like_button.js"></script> -->
+</head>
+<body>
+    <div id="like_button_container"></div>
+    <div id="root"></div>
+    <!-- 
+        1. React.createElement() -> React element (thành phần nhỏ nhất khi làm việc với react)
+        2. document.createElement() -> DOM element
+        - thành phần nhỏ nhất của DOM là node
+        3. tạo:
+            <h1 title="Hello" class="heading">Hello guys ~</h1>
+        4. Tạo: 
+            <ul>
+            <li>Javasript</li>
+            <li>ReactJS</li>
+        </ul>
+        5. Tạo:
+            <div class="post-item">
+                <h2 title="Học react tại F8">Học ReactJS</h2>
+                <p>Học ReactJS từ cơ bản -> nâng cao</p>
+            </div>
+     -->
+<script>
+    //3. DOM
+    const h1DOM = document.createElement('h1');
+    h1DOM.title = 'Hello';
+    h1DOM.className = 'heading';
+    h1DOM.innerText = 'Hello guys ~';
+
+    //document.body.appendChild(h1DOM);
+    //3. React
+
+    // React.createElement(type, props, children)
+    const h1React = React.createElement('h1',{
+        title: 'Hello',
+        className: 'heading'
+    },'Hello guys ~')
+
+//Get root element
+const root = document.querySelector('#root');
+
+//React DOM to render UI
+ReactDOM.render(h1React, root);
+</script>
+
+    
+
+   
+
+</body>
+</html>

@@ -1,0 +1,10 @@
+{
+	"folders": [
+		{
+			"path": "../nodejs/json_server"
+		}
+	],
+	"settings": {
+		"liveServer.settings.port": 5501
+	}
+}

@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+    <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+</head>
+<body>
+    <!-- - React elements
+        - Sd props giống như với attribute của thẻ HTML 
+        - 2 prop class, for => className, htmlFor
+        - Phải tuân theo quy ước có sẵn giống như html
+    - React components
+        - Sd props giống như đối số cho component/func
+        - Tự do đặt tên props
+            - Đặt theo camelCase
+            - Có thể bao gồm dấu gạch ngang
+    - Chú ý: 
+        - Prop "key" là prop đặc biệt 
+        - Props cơ bản là đối số của component
+            => Props có thể là bất cứ kiểu dữ liệu gì
+        - Sd destructuring -->
+        <div id="root"></div>
+        <script type = "text/babel">
+            //PostItem.js
+            function PostItem(props){
+
+                console.log(props);//Các giá trị được truyền vào các thuộc tính (props) của thành phần <PostItem /> sẽ được gửi đến hàm PostItem dưới dạng một đối tượng. Trong trường hợp này, đối số a sẽ là một đối tượng có các thuộc tính tương ứng với các thuộc tính (props) được truyền vào
+                
+                if(typeof props.callback === "function")
+                {
+                    props.callback(Math.random());
+                }
+                    
+
+                return (
+
+                    <div className = "post-item">
+                        <label htmlFor = "email"></label>
+                        <input id= "email"/>
+                        <img 
+                            src = {props.image}
+                            alt={props.title}
+                        />
+                        <h2 className = "post-title">{props.title}</h2>
+                        <p className = "post-desc">{props.description}</p>
+                        <p className = "post-published">{props.publish}</p>
+                    </div>
+                )
+            }
+
+            //App.js
+            function App() {
+                // console.log(<PostItem title="Title test" />)
+                return (
+                    <div id="wrapper">
+                        < PostItem
+                            title="Fan cứng của Kim Taehyung còn chỉ ra rằng công ty đã không quảng bá các hoạt động của V dù cho những hoạt động này đều đạt được những thành tích ấn tượng."
+                            image = "https://images2.thanhnien.vn/thumb_w/640/528068263637045248/2023/3/31/bts1-16802425727781668192812.png"   
+                            description = "Ngược lại, tài khoản Twitter chính thức của BigHit rất tích cực quảng bá và đăng bài về các sản phẩm solo, sự xuất hiện cùng các cuộc phỏng vấn của các thành viên khác."
+                            publish = "Được biết đây không phải là lần đầu tiên giọng ca Sweet Night bị công ty ngó lơ. Vào tháng 1.2019, V phát hành bài hát solo mang tên Scenery tuy nhiên công ty không đưa ra thông báo về việc phát hành và cũng không đưa sản phẩm này vào danh sách phát của các nền tảng âm nhạc hàng đầu. Tiếp đó, vào tháng 8.2019, V tiếp tục phát hành ca khúc solo khác mang tên Winter Bear, BigHit cũng không chủ động quảng bá và đưa ra các hoạt động chính thức cho bài hát như các ca khúc solo của các thành viên khác trong nhóm"
+                            callback = {(random) => {
+                                console.log('random:', random);
+                            }
+                            }
+                        />
+                        < PostItem />
+                        < PostItem />
+                    </div>
+                )
+            }
+
+            // index.js
+            ReactDOM.render(<App />, document.getElementById('root'));
+            
+        </script>
+</body>
+</html>
